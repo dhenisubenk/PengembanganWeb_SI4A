@@ -51,6 +51,10 @@
                                 <a class="nav-link" href="#">Teknik Informatika</a>
                                 <a class="nav-link" href="#">Manajemen Informatika</a>
                                 <a class="nav-link" href="#">Komputerisasi Akuntansi</a>
+                                        <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Launch demo modal
+                                </button>
                             </nav>
                         </div>
                     </div>
@@ -58,43 +62,57 @@
                 <div class="col-md-9">
                     <div class="card">
                         <div class="card-body">
-                            <table class="table table-bordered table-striped table-hover">
-                                <thead>
-                                    <tr class="table-dark">
-                                        <th>NIM</th>
-                                        <th>NAMA</th>
-                                        <th>JURUSAN</th>
-                                        <th>ALAMAT</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1923123</td>
-                                        <td>Mahmud</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>Ambon</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1923124</td>
-                                        <td>Tarjo</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>STAIN</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1923125</td>
-                                        <td>Susi</td>
-                                        <td>Sistem Informasi</td>
-                                        <td>Ambon</td>
-                                    </tr>
-                                </tbody>
-
-                            </table>
+                            <h2>Hubungi Kami</h2>
+                            <form action="">
+                                <div class="form-group row">
+                                    <div class="col-6">
+                                        <label for="">Nama Anda </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="">Email Anda </label>
+                                        <input type="email" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Subjek </label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Pesan </label>
+                                    <textarea class="form-control"></textarea>
+                                </div>
+                                <div class="form-group mt-2 d-grid gap-2">
+                                    <button type="button" class="btn btn-success">Kirim</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+
+  
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                ...
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+  
         <script src="js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
