@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web Development</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body{
+                background-color: #eee;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="col-lg-12 mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Perulangan</h4>
+                        <!-- inner html -->
+                        <p id="cetak"></p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <script>
+            var d = new Date();
+            var tanggal = d.getDate();
+            var tahun = d.getFullYear();
+
+            var midun = ["Midun","03423412","Sistem Informasi","Ambon"];
+
+            var mahasiswa = {
+                nama : "Midun",
+                nim : "03423412",
+                jurusan : "Sistem Informasi",
+                alamat : "Ambon",
+                tahun_lahir : 2002,
+                getUmur : function(){
+                    var tahun = new Date().getFullYear();
+                    var umur = tahun - this.tahun_lahir;
+                    return umur + " Tahun";
+                }
+            };
+
+            document.getElementById("cetak").innerHTML = mahasiswa.getUmur();
+
+            //fungsi -> ada return value
+            // prosedur -> tidak ada return
+
+            function cetak(nama)
+            {
+                console.log("Halo.." + nama);
+            }
+
+            function penjumlahan(a,b)
+            {
+                return a + b;
+            }
+
+            cetak("asdasd");
+            
+            console.log(penjumlahan(5,6));
+
+            //console.log(midun[0]);
+        </script>
+  
+        <script src="js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
