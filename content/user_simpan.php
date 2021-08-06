@@ -1,8 +1,13 @@
 <?php  
 	$username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);       
-    $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
+    $pass = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
     $level = filter_var($_POST['level'], FILTER_SANITIZE_STRING);
-	
+
+    $password = password_hash($pass, PASSWORD_DEFAULT);
+
+    // 2 arah -> encrypt -> decrypt
+    // 1 arah -> hash
+
     $file_name = $_FILES['foto']['name'];
     $file_tmp = $_FILES['foto']['tmp_name'];
     $file_size = $_FILES['foto']['size'];
@@ -44,7 +49,7 @@
 	        {
 	        	move_uploaded_file($file_tmp, "img/".$file_name);
 	            echo "<script>
-	                alert('Data Berhasil Diubah!');
+	                alert('Data Berhasil Disimpan!');
 	                window.location.href = 'index.php?page=user';
 	            </script>";
 	        }

@@ -1,5 +1,18 @@
 <?php 
+    session_start();
     require_once 'config/koneksi.php';
+
+    if (!isset($_SESSION['login_websi4a'])) {
+         echo "<script>
+                window.location.href = 'login.php';
+            </script>";
+    }
+    else
+    {
+        $username = $_SESSION['login_websi4a'];
+        $sqlx = mysqli_query($con, "SELECT id,username,level,foto FROM user WHERE username = '$username'");
+        $user = mysqli_fetch_array($sqlx);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +38,7 @@
         </div>
 
         <div class="container">
-            <?php  
+            <?php
                 $content = "content";
                 $page = @$_GET['page'];
                 if ($page == "") { //index.php
@@ -39,3 +52,5 @@
         <script src="js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
+
+<?php } ?>
